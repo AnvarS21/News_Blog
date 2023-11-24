@@ -25,11 +25,14 @@ SECRET_KEY = con('SECRET')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = con('DEBUG', cast=bool)
 
-ALLOWED_HOSTS = con('ALLOWED_HOSTS').split(', ')
+ALLOWED_HOSTS = con('ALLOWED_HOSTS').split(',')
 
+AUTH_USER_MODEL = 'accounts.CustomUser'
 
 # Application definition
 MY_APPS = [
+    'apps.accounts',
+    'apps.news',
 
 ]
 
